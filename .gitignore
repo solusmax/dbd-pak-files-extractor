@@ -1,0 +1,17 @@
+.AppleDouble
+.DS_Store
+.idea
+.LSOverride
+.vscode/
+[Dd]esktop.ini
+*.lnk
+*.log
+build/
+ehthumbs_vista.db
+ehthumbs.db
+output/
+node_modules/
+npm-debug.*
+.sow/
+Thumbs.db
+Thumbs.db:encryptable
