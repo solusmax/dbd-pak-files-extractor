@@ -4,14 +4,18 @@ dbd_folder="/c/Program Files (x86)/Steam/steamapps/common/Dead by Daylight/"
 
 is_separate_folder=false
 is_locres_only=false
+is_clearing_output=false
 
-while getopts sl option; do
+while getopts slc option; do
   case $option in
     s)
       is_separate_folder=true
       ;;
     l)
       is_locres_only=true
+      ;;
+    c)
+      is_clearing_output=true
       ;;
     \?)
       echo "Error: Invalid option"
@@ -23,6 +27,10 @@ done
 dbd_paks_folder="$dbd_folder/DeadByDaylight/Content/Paks"
 output_folder="./output"
 
+if [ $is_clearing_output == true ]
+then
+  rm -rf "$output_folder"
+fi
 
 if [ ! -d "$output_folder" ]
 then
