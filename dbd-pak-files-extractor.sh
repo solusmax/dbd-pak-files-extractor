@@ -1,6 +1,13 @@
 dbd_folder="/c/Program Files (x86)/Steam/steamapps/common/Dead by Daylight/"
 # Путь к папке DBD
 
+dbd_paks_folder="$dbd_folder/DeadByDaylight/Content/Paks"
+output_folder="./output"
+
+
+#########################################
+#########        Аргументы        #######
+#########################################
 
 is_separate_folder=false
 is_locres_only=false
@@ -24,8 +31,9 @@ while getopts slc option; do
 done
 
 
-dbd_paks_folder="$dbd_folder/DeadByDaylight/Content/Paks"
-output_folder="./output"
+#########################################
+#########          Скрипт         #######
+#########################################
 
 if [ $is_clearing_output == true ]
 then
