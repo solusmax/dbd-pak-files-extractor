@@ -59,12 +59,9 @@ for pak_path in "${pak_paths[@]}"; do
 
   if [ $is_locres_only == true ]
   then
-    if [ "$pak_file" != "pakchunk0-WindowsNoEditor.pak" ]
+    if [ "$pak_file" != "pakchunk4-WindowsNoEditor.pak" ]
     then
-      if [ "$pak_file" != "pakchunk4-WindowsNoEditor.pak" ]
-      then
-        continue
-      fi
+      continue
     fi
   fi
 
