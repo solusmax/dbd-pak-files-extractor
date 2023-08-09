@@ -1,13 +1,10 @@
 dbd_folder="/c/Program Files (x86)/Steam/steamapps/common/Dead by Daylight/"
 # Путь к папке DBD
 
-dbd_paks_folder="$dbd_folder/DeadByDaylight/Content/Paks"
-output_folder="./output"
 
-
-#########################################
-#########        Аргументы        #######
-#########################################
+##########################################
+########         Аргументы        ########
+##########################################
 
 is_separate_folder=false
 is_locres_only=false
@@ -31,9 +28,12 @@ while getopts slc option; do
 done
 
 
-#########################################
-#########          Скрипт         #######
-#########################################
+##########################################
+########          Скрипт          ########
+##########################################
+
+dbd_paks_folder="$dbd_folder/DeadByDaylight/Content/Paks"
+output_folder="./output"
 
 if [ $is_clearing_output == true ]
 then
@@ -45,9 +45,7 @@ then
   mkdir "$output_folder"
 fi
 
-
 pak_paths=()
-
 
 while IFS=  read -r -d $'\0'; do
   pak_paths+=("$REPLY")
@@ -78,4 +76,3 @@ for pak_path in "${pak_paths[@]}"; do
 
   ./utils/quickbms_4gb_files.exe "./utils/unreal_engine_4_0.4.27.bms" "$dbd_paks_folder/$pak_file" "$pak_file_output_folder"
 done
-
